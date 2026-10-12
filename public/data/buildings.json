@@ -153,14 +153,14 @@
    },
    "floors": null,
    "center": [
-    0.1,
-    -0.0
+    -9.708,
+    1.614
    ],
    "size": [
-    116.8,
-    49.1
+    81.4,
+    42.5
    ],
-   "height": 34.8
+   "height": 30.0
   },
   {
    "id": "LI",
@@ -207,6 +207,29 @@
     38.5
    ],
    "height": 19.7
+  },
+  {
+   "id": "EXH",
+   "code": "EXH",
+   "category": "event",
+   "name": {
+    "vi": "Nhà triển lãm",
+    "en": "Exhibition Hall"
+   },
+   "description": {
+    "vi": "Nhà triển lãm ở góc Đông Bắc campus, cuối trục đường phía Bắc.",
+    "en": "Exhibition hall in the north-east corner of the campus, at the end of the northern road."
+   },
+   "floors": null,
+   "center": [
+    266.603,
+    -392.121
+   ],
+   "size": [
+    94.5,
+    39.7
+   ],
+   "height": 8.2
   },
   {
    "id": "FC",
