@@ -1,0 +1,396 @@
+{
+ "_note": "Mô tả ngắn có thể sửa tự do. center/size: mét, x=Đông, z=-Bắc (gốc tại LH).",
+ "buildings": [
+  {
+   "id": "AD",
+   "code": "AD",
+   "category": "admin",
+   "name": {
+    "vi": "Tòa Hành chính",
+    "en": "Administration Building"
+   },
+   "description": {
+    "vi": "Khối văn phòng điều hành và các phòng ban của trường.",
+    "en": "Main offices of the university administration and departments."
+   },
+   "floors": 6,
+   "center": [
+    10.5,
+    -306.9
+   ],
+   "size": [
+    129.2,
+    43.7
+   ],
+   "height": 30.0
+  },
+  {
+   "id": "B1",
+   "code": "B1",
+   "category": "academic",
+   "name": {
+    "vi": "Tòa giảng dạy B1",
+    "en": "Academic Building B1"
+   },
+   "description": {
+    "vi": "Một trong năm tòa giảng dạy quanh trục trung tâm, gồm phòng học và phòng thí nghiệm.",
+    "en": "One of five academic buildings around the central axis, with classrooms and labs."
+   },
+   "floors": 5,
+   "center": [
+    17.9,
+    -177.3
+   ],
+   "size": [
+    51.4,
+    49.8
+   ],
+   "height": 30.0
+  },
+  {
+   "id": "B2",
+   "code": "B2",
+   "category": "academic",
+   "name": {
+    "vi": "Tòa giảng dạy B2",
+    "en": "Academic Building B2"
+   },
+   "description": {
+    "vi": "Tòa giảng dạy nằm giữa cụm B1–B3.",
+    "en": "Academic building in the middle of the B1–B3 row."
+   },
+   "floors": 5,
+   "center": [
+    38.0,
+    -121.5
+   ],
+   "size": [
+    51.7,
+    35.9
+   ],
+   "height": 30.0
+  },
+  {
+   "id": "B3",
+   "code": "B3",
+   "category": "academic",
+   "name": {
+    "vi": "Tòa giảng dạy B3",
+    "en": "Academic Building B3"
+   },
+   "description": {
+    "vi": "Tòa giảng dạy phía Nam của cụm B1–B3.",
+    "en": "Southern academic building of the B1–B3 row."
+   },
+   "floors": 5,
+   "center": [
+    57.0,
+    -74.3
+   ],
+   "size": [
+    51.6,
+    36.0
+   ],
+   "height": 30.0
+  },
+  {
+   "id": "B5",
+   "code": "B5",
+   "category": "academic",
+   "name": {
+    "vi": "Tòa giảng dạy B5",
+    "en": "Academic Building B5"
+   },
+   "description": {
+    "vi": "Tòa giảng dạy phía Bắc của cụm B5–B6.",
+    "en": "Northern academic building of the B5–B6 pair."
+   },
+   "floors": 5,
+   "center": [
+    95.2,
+    -198.2
+   ],
+   "size": [
+    63.0,
+    53.6
+   ],
+   "height": 30.0
+  },
+  {
+   "id": "B6",
+   "code": "B6",
+   "category": "academic",
+   "name": {
+    "vi": "Tòa giảng dạy B6",
+    "en": "Academic Building B6"
+   },
+   "description": {
+    "vi": "Tòa giảng dạy phía Nam của cụm B5–B6.",
+    "en": "Southern academic building of the B5–B6 pair."
+   },
+   "floors": 5,
+   "center": [
+    122.5,
+    -123.1
+   ],
+   "size": [
+    55.7,
+    51.8
+   ],
+   "height": 30.0
+  },
+  {
+   "id": "LH",
+   "code": "LH",
+   "category": "academic",
+   "name": {
+    "vi": "Giảng đường LH",
+    "en": "Lecture Hall"
+   },
+   "description": {
+    "vi": "Khối giảng đường lớn ở trung tâm campus.",
+    "en": "Large lecture hall block at the heart of the campus."
+   },
+   "floors": null,
+   "center": [
+    0.1,
+    -0.0
+   ],
+   "size": [
+    116.8,
+    49.1
+   ],
+   "height": 34.8
+  },
+  {
+   "id": "LI",
+   "code": "LI",
+   "category": "academic",
+   "name": {
+    "vi": "Thư viện",
+    "en": "Library"
+   },
+   "description": {
+    "vi": "Thư viện trường, nối với Hội trường bằng sảnh tam giác.",
+    "en": "University library, linked to the Ceremony Hall by a triangular atrium."
+   },
+   "floors": null,
+   "center": [
+    -76.8,
+    -140.2
+   ],
+   "size": [
+    85.3,
+    39.2
+   ],
+   "height": 16.1
+  },
+  {
+   "id": "CH",
+   "code": "CH",
+   "category": "event",
+   "name": {
+    "vi": "Hội trường",
+    "en": "Ceremony Hall"
+   },
+   "description": {
+    "vi": "Hội trường cho lễ tốt nghiệp, hội thảo và sự kiện lớn.",
+    "en": "Hall for graduations, conferences and large events."
+   },
+   "floors": null,
+   "center": [
+    -168.4,
+    -106.3
+   ],
+   "size": [
+    87.0,
+    38.5
+   ],
+   "height": 19.7
+  },
+  {
+   "id": "FC",
+   "code": "FC",
+   "category": "life",
+   "name": {
+    "vi": "Khu ẩm thực",
+    "en": "Food Court"
+   },
+   "description": {
+    "vi": "Khu ăn uống chính của sinh viên và cán bộ.",
+    "en": "Main dining area for students and staff."
+   },
+   "floors": null,
+   "center": [
+    -183.4,
+    -15.5
+   ],
+   "size": [
+    71.8,
+    25.2
+   ],
+   "height": 20.0
+  },
+  {
+   "id": "D1",
+   "code": "D1",
+   "category": "life",
+   "name": {
+    "vi": "Ký túc xá D1",
+    "en": "Dormitory D1"
+   },
+   "description": {
+    "vi": "Khu nhà ở sinh viên có sân trong.",
+    "en": "Student housing block with an inner courtyard."
+   },
+   "floors": null,
+   "center": [
+    -268.4,
+    -63.8
+   ],
+   "size": [
+    61.0,
+    55.5
+   ],
+   "height": 30.0
+  },
+  {
+   "id": "D2",
+   "code": "D2",
+   "category": "life",
+   "name": {
+    "vi": "Ký túc xá D2",
+    "en": "Dormitory D2"
+   },
+   "description": {
+    "vi": "Khu nhà ở sinh viên có sân trong.",
+    "en": "Student housing block with an inner courtyard."
+   },
+   "floors": null,
+   "center": [
+    -219.8,
+    66.8
+   ],
+   "size": [
+    61.0,
+    55.5
+   ],
+   "height": 30.0
+  },
+  {
+   "id": "GH",
+   "code": "GH",
+   "category": "life",
+   "name": {
+    "vi": "Nhà khách & biệt thự",
+    "en": "Guest House & Villas"
+   },
+   "description": {
+    "vi": "Nhà khách và cụm biệt thự V1–V8 quanh vòng đường phía Đông Bắc.",
+    "en": "Guest house and villas V1–V8 along the north-east loop road."
+   },
+   "floors": null,
+   "center": [
+    290.2,
+    -240.2
+   ],
+   "size": [
+    194.1,
+    145.9
+   ],
+   "height": 11.0
+  },
+  {
+   "id": "SH",
+   "code": "SH",
+   "category": "sport",
+   "name": {
+    "vi": "Nhà thi đấu",
+    "en": "Sport Hall"
+   },
+   "description": {
+    "vi": "Nhà thi đấu đa năng trong nhà.",
+    "en": "Indoor multi-purpose sports hall."
+   },
+   "floors": null,
+   "center": [
+    -63.2,
+    163.9
+   ],
+   "size": [
+    114.5,
+    57.3
+   ],
+   "height": 9.0
+  },
+  {
+   "id": "san-van-dong",
+   "code": "SVĐ",
+   "category": "sport",
+   "name": {
+    "vi": "Sân vận động",
+    "en": "Stadium"
+   },
+   "description": {
+    "vi": "Sân bóng đá và đường chạy điền kinh.",
+    "en": "Football pitch with running track."
+   },
+   "floors": null,
+   "center": [
+    30.9,
+    147.4
+   ],
+   "size": [
+    93.7,
+    178.1
+   ],
+   "height": 0.1
+  },
+  {
+   "id": "CP",
+   "code": "CP",
+   "category": "tech",
+   "name": {
+    "vi": "Trạm kỹ thuật trung tâm",
+    "en": "Central Plant"
+   },
+   "description": {
+    "vi": "Trạm cấp điện, nước và điều hòa cho toàn campus.",
+    "en": "Utility plant supplying power, water and cooling to the campus."
+   },
+   "floors": null,
+   "center": [
+    188.4,
+    57.8
+   ],
+   "size": [
+    108.8,
+    50.0
+   ],
+   "height": 10.0
+  },
+  {
+   "id": "mai-che-trung-tam",
+   "code": "MC",
+   "category": "life",
+   "name": {
+    "vi": "Mái che trung tâm",
+    "en": "Central Canopy"
+   },
+   "description": {
+    "vi": "Hệ mái che nối các tòa ở khu trung tâm.",
+    "en": "Covered walkways linking the central buildings."
+   },
+   "floors": null,
+   "center": [
+    -84.7,
+    -46.2
+   ],
+   "size": [
+    234.0,
+    158.1
+   ],
+   "height": 5.5
+  }
+ ]
+}

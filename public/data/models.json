@@ -1,0 +1,349 @@
+{
+ "origin_lnglat": [
+  106.61502684609346,
+  11.107046143806222
+ ],
+ "axes": "x=East,y=Up,z=-North (m)",
+ "models": [
+  {
+   "id": "AD",
+   "file": "models/ad.glb",
+   "position": [
+    12.267,
+    0,
+    -284.72
+   ],
+   "rotationY": 0.0,
+   "bbox": [
+    -54.2,
+    220.6,
+    78.8,
+    348.8
+   ],
+   "top": 30.0
+  },
+  {
+   "id": "B1",
+   "file": "models/b1.glb",
+   "position": [
+    19.349,
+    0,
+    -178.794
+   ],
+   "rotationY": 0.0,
+   "bbox": [
+    -13.4,
+    146.3,
+    52.1,
+    211.2
+   ],
+   "top": 30.0
+  },
+  {
+   "id": "B2",
+   "file": "models/b2.glb",
+   "position": [
+    39.642,
+    0,
+    -123.872
+   ],
+   "rotationY": 0.0,
+   "bbox": [
+    9.3,
+    97.8,
+    70.0,
+    150.0
+   ],
+   "top": 30.0
+  },
+  {
+   "id": "B3",
+   "file": "models/b3.glb",
+   "position": [
+    57.461,
+    0,
+    -75.672
+   ],
+   "rotationY": 0.0,
+   "bbox": [
+    27.1,
+    49.6,
+    87.8,
+    101.8
+   ],
+   "top": 30.0
+  },
+  {
+   "id": "B5",
+   "file": "models/b5.glb",
+   "position": [
+    94.223,
+    0,
+    -199.36
+   ],
+   "rotationY": 0.0,
+   "bbox": [
+    59.2,
+    160.6,
+    129.3,
+    238.1
+   ],
+   "top": 30.0
+  },
+  {
+   "id": "B6",
+   "file": "models/b6.glb",
+   "position": [
+    123.354,
+    0,
+    -120.588
+   ],
+   "rotationY": 0.0,
+   "bbox": [
+    88.3,
+    81.9,
+    158.4,
+    159.3
+   ],
+   "top": 30.0
+  },
+  {
+   "id": "CH",
+   "file": "models/ch.glb",
+   "position": [
+    -167.154,
+    0,
+    -107.739
+   ],
+   "rotationY": 0.0,
+   "bbox": [
+    -209.0,
+    83.2,
+    -125.3,
+    132.2
+   ],
+   "top": 19.7
+  },
+  {
+   "id": "CP",
+   "file": "models/cp.glb",
+   "position": [
+    188.442,
+    0,
+    57.773
+   ],
+   "rotationY": 0.0,
+   "bbox": [
+    140.1,
+    -137.8,
+    236.8,
+    22.3
+   ],
+   "top": 10.0
+  },
+  {
+   "id": "D1",
+   "file": "models/d1.glb",
+   "position": [
+    -267.623,
+    0,
+    -65.665
+   ],
+   "rotationY": 0.0,
+   "bbox": [
+    -305.1,
+    27.0,
+    -230.1,
+    104.4
+   ],
+   "top": 30.0
+  },
+  {
+   "id": "D2",
+   "file": "models/d2.glb",
+   "position": [
+    -218.069,
+    0,
+    65.345
+   ],
+   "rotationY": 0.0,
+   "bbox": [
+    -256.4,
+    -103.4,
+    -179.7,
+    -27.3
+   ],
+   "top": 30.0
+  },
+  {
+   "id": "FC",
+   "file": "models/fc.glb",
+   "position": [
+    -182.452,
+    0,
+    -16.951
+   ],
+   "rotationY": 0.0,
+   "bbox": [
+    -206.8,
+    -21.0,
+    -158.2,
+    54.9
+   ],
+   "top": 20.0
+  },
+  {
+   "id": "GH",
+   "file": "models/gh.glb",
+   "position": [
+    290.227,
+    0,
+    -240.227
+   ],
+   "rotationY": 0.0,
+   "bbox": [
+    193.2,
+    167.3,
+    387.3,
+    313.2
+   ],
+   "top": 11.0
+  },
+  {
+   "id": "LH",
+   "file": "models/lh.glb",
+   "position": [
+    0.0,
+    0,
+    -0.0
+   ],
+   "rotationY": -0.00291,
+   "bbox": [
+    -56.5,
+    -37.1,
+    56.6,
+    37.1
+   ],
+   "top": 34.8
+  },
+  {
+   "id": "LI",
+   "file": "models/li.glb",
+   "position": [
+    -75.075,
+    0,
+    -141.873
+   ],
+   "rotationY": 0.0,
+   "bbox": [
+    -117.2,
+    115.8,
+    -32.9,
+    168.0
+   ],
+   "top": 16.1
+  },
+  {
+   "id": "SH",
+   "file": "models/sh.glb",
+   "position": [
+    -68.972,
+    0,
+    160.034
+   ],
+   "rotationY": 0.0,
+   "bbox": [
+    -120.6,
+    -202.3,
+    -17.3,
+    -117.8
+   ],
+   "top": 9.0
+  },
+  {
+   "id": "TRANSPORT",
+   "file": "models/transport.glb",
+   "position": [
+    -17.023,
+    0,
+    -110.894
+   ],
+   "rotationY": 0.0,
+   "bbox": [
+    -446.5,
+    -217.3,
+    412.4,
+    439.1
+   ],
+   "top": 0.1
+  },
+  {
+   "id": "mai-che-trung-tam",
+   "file": "models/mai-che-trung-tam.glb",
+   "position": [
+    -84.683,
+    0,
+    -46.137
+   ],
+   "rotationY": 0.0,
+   "bbox": [
+    -201.7,
+    -32.9,
+    32.3,
+    125.2
+   ],
+   "top": 5.5
+  },
+  {
+   "id": "san-van-dong",
+   "file": "models/san-van-dong.glb",
+   "position": [
+    30.847,
+    0,
+    147.447
+   ],
+   "rotationY": 0.0,
+   "bbox": [
+    -16.0,
+    -236.5,
+    77.7,
+    -58.4
+   ],
+   "top": 0.1
+  },
+  {
+   "id": "tam-giac-CH-LI",
+   "file": "models/tam-giac-ch-li.glb",
+   "position": [
+    -128.129,
+    0,
+    -130.518
+   ],
+   "rotationY": 0.0,
+   "bbox": [
+    -144.5,
+    113.3,
+    -111.7,
+    147.8
+   ],
+   "top": 24.5
+  },
+  {
+   "id": "co",
+   "file": "models/co.glb",
+   "position": [
+    13.0,
+    0,
+    -177.5
+   ],
+   "rotationY": 0.0,
+   "bbox": [
+    -339.7,
+    -478.5,
+    428.9,
+    402.2
+   ],
+   "top": -0.0
+  }
+ ]
+}
