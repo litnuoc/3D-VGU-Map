@@ -27,7 +27,7 @@ export type Quality = 'auto' | 'fine' | 'smooth'
 interface ModelEntry { id: string; file: string; position: [number, number, number]; rotationY: number }
 
 // Mô hình được vẽ mặt tiền có cửa sổ (dạng khối, chưa có chi tiết cửa)
-const FACADE_IDS = new Set(['AD', 'B1', 'B2', 'B3', 'B5', 'B6', 'CH', 'D1', 'D2', 'FC', 'GH', 'LI', 'SH'])
+const FACADE_IDS = new Set(['AD', 'B1', 'B2', 'B3', 'B5', 'B6', 'CH', 'D1', 'D2', 'FC', 'GH', 'LH', 'LI', 'SH', 'EXH'])
 const LAYER_OF: Record<string, LayerName> = { TRANSPORT: 'roads', co: 'grass', 'san-van-dong': 'roads' }
 
 const ease = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2)
