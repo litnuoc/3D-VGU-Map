@@ -13,9 +13,9 @@
 
 ## Tính năng
 
-- **Khám phá**: tìm kiếm (gõ có dấu hoặc không dấu), lọc theo nhóm (Học tập, Hành chính, Sự kiện, Đời sống, Thể thao, Kỹ thuật), danh sách 17 địa điểm.
+- **Khám phá**: tìm kiếm (gõ có dấu hoặc không dấu), lọc theo nhóm (Học tập, Hành chính, Sự kiện, Đời sống, Thể thao, Kỹ thuật), danh sách 18 địa điểm.
 - **Chi tiết toà nhà**: mô tả, số tầng, kích thước; các góc camera dựng sẵn *Toàn cảnh · Mặt trước · Mặt sau · Nhìn từ trên · Xoay vòng*.
-- **Tham quan tự động**: camera tự bay qua 16 địa điểm, có tạm dừng / tới / lui.
+- **Tham quan tự động**: camera tự bay qua 17 địa điểm, có tạm dừng / tới / lui.
 - **Môi trường**: 4 chế độ ánh sáng *Bình minh · Ban ngày · Hoàng hôn · Ban đêm* (ban đêm có cửa sổ sáng đèn và đèn đường).
 - **Lớp hiển thị**: bật/tắt toà nhà, cây xanh, thảm cỏ, đường & sân, nhãn tên.
 - **Chất lượng tự động**: đo tốc độ khung hình, máy yếu thì tự giảm mật độ cây, tắt bóng đổ, hạ độ phân giải.
@@ -91,7 +91,7 @@ Các mô hình 3D thuộc về Trường Đại học Việt Đức. Ý tưởng
 An interactive 3D map of the **Vietnamese-German University (VGU)** campus, running entirely in the browser
 (Nuxt 3 + Three.js, no server or API key).
 
-**Features:** search and category filters for 17 places · building details with preset camera views
+**Features:** search and category filters for 18 places · building details with preset camera views
 (overview, front, back, top, orbit) · automatic campus tour · four lighting moods (morning, day, dusk, night with
 lit windows and street lamps) · layer toggles · adaptive quality · shareable view links · PNG export ·
 mini map, compass, full screen · Vietnamese / English · mobile layout.
