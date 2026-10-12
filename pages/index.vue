@@ -26,7 +26,7 @@ const toast = ref('')
 let toastTimer: any
 
 // ── tham quan tự động ──
-const TOUR_ORDER = ['AD', 'B1', 'B2', 'B3', 'B5', 'B6', 'LI', 'CH', 'LH', 'FC', 'D1', 'D2', 'SH', 'san-van-dong', 'CP', 'GH']
+const TOUR_ORDER = ['AD', 'B1', 'B2', 'B3', 'B5', 'B6', 'LI', 'CH', 'LH', 'FC', 'D1', 'D2', 'SH', 'san-van-dong', 'CP', 'GH', 'EXH']
 const tour = reactive({ on: false, paused: false, index: 0 })
 let tourTimer: any
 const tourList = computed(() => TOUR_ORDER.filter(id => buildings.value.some(b => b.id === id)))
