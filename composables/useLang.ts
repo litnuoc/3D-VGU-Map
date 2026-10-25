@@ -84,6 +84,14 @@ const DICT: Record<string, { vi: string; en: string }> = {
   },
   'info.keys': { vi: 'Chuột trái: kéo bản đồ · Chuột phải: xoay · Cuộn: phóng to/thu nhỏ · Bấm vào toà nhà để xem chi tiết.', en: 'Left drag: pan · Right drag: rotate · Scroll: zoom · Click a building for details.' },
   'info.close': { vi: 'Đóng', en: 'Close' },
+  'mode.3d': { vi: '3D', en: '3D' },
+  'mode.map': { vi: 'Bản đồ', en: 'Map' },
+  'map.hint': { vi: 'Mô hình 3D đặt trên bản đồ thật. Bấm vào toà nhà hoặc chọn trong danh sách.', en: '3D models on a real map. Click a building or pick one from the list.' },
+  'map.open3d': { vi: 'Xem chi tiết trong 3D', en: 'Open in 3D view' },
+  'map.dark': { vi: 'Nền tối', en: 'Dark' },
+  'map.light': { vi: 'Nền sáng', en: 'Light' },
+  'map.gps': { vi: 'Vị trí của tôi', en: 'My location' },
+  'map.gpsNo': { vi: 'Không lấy được vị trí', en: 'Location unavailable' },
   'minimap': { vi: 'Bản đồ nhỏ — bấm để di chuyển', en: 'Mini map — click to move' },
 }
 
