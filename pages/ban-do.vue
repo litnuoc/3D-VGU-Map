@@ -10,16 +10,21 @@ const base = useRuntimeConfig().app.baseURL
 
 const STYLES = {
   dark: 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json',
-  light: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
+  light: 'https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json',
 }
 const M_PER_DEG_LON = 109234.3187 // như docs/rhino-inch-transform.json
 const M_PER_DEG_LAT = 110574.0
+// Màu mặt đất theo nền: nền sáng dùng tông tươi như trang 3D, nền tối dùng tông trầm
+const GROUND = {
+  light: { road: '#7d838b', grass: '#8fb86a', hemiGround: 0xb8c4a8, hemi: 2.0, sun: 2.2 },
+  dark: { road: '#59606c', grass: '#4f7d45', hemiGround: 0x6b7686, hemi: 1.6, sun: 1.8 },
+}
 const catColor: Record<string, string> = { academic: '#2f6db5', admin: '#0F1E36', event: '#8a4fbf', life: '#2f9a6b', sport: '#d0632a', tech: '#6b7380' }
 
 const mapEl = ref<HTMLDivElement>()
 const buildings = ref<Building[]>([])
 const selected = ref<string | null>(null)
-const basemap = ref<'dark' | 'light'>('dark')
+const basemap = ref<'dark' | 'light'>('light')
 const progress = ref(0)
 const ready = ref(false)
 const failed = ref('')
@@ -30,7 +35,7 @@ let map: maplibregl.Map | null = null
 let origin: [number, number] = [106.61502684609346, 11.107046143806222]
 let footprints: Record<string, [number, number][]> = {}
 let THREE: any = null
-let three: { scene: any; roots: Map<string, any>; matrix: any } | null = null
+let three: { scene: any; roots: Map<string, any>; matrix: any; hemi: any; sun: any; road: any[]; grass: any[] } | null = null
 const markers: maplibregl.Marker[] = []
 
 const toLngLat = (x: number, z: number): [number, number] =>
@@ -59,8 +64,8 @@ function styleModel(id: string, root: any) {
     const color = (src?.color || new THREE.Color('#ddd')).clone()
     const isGlass = (src?.transmission ?? 0) > 0 || (src?.opacity ?? 1) < 0.95 || /glass|kinh|window/i.test(src?.name || '')
     let mat
-    if (id === 'TRANSPORT') mat = new THREE.MeshStandardMaterial({ color: '#59606c', roughness: 0.95 })
-    else if (id === 'co') mat = new THREE.MeshStandardMaterial({ color: '#4f7d45', roughness: 1 })
+    if (id === 'TRANSPORT') { mat = new THREE.MeshStandardMaterial({ color: GROUND.light.road, roughness: 0.95 }); mat.userData.kind = 'road' }
+    else if (id === 'co') { mat = new THREE.MeshStandardMaterial({ color: GROUND.light.grass, roughness: 1 }); mat.userData.kind = 'grass' }
     else if (id === 'san-van-dong') {
       const hsl = { h: 0, s: 0, l: 0 }; color.getHSL(hsl)
       const track = hsl.s > 0.5 && hsl.h < 0.1, pitch = hsl.s > 0.5 && hsl.h > 0.2 && hsl.h < 0.45
@@ -83,8 +88,9 @@ async function loadModels() {
   footprints = fp
 
   const scene = new THREE.Scene()
-  scene.add(new THREE.HemisphereLight(0xffffff, 0x6b7686, 1.6))
-  const sun = new THREE.DirectionalLight(0xffffff, 1.8)
+  const hemi = new THREE.HemisphereLight(0xffffff, 0x6b7686, 1.6)
+  scene.add(hemi)
+  const sun = new THREE.DirectionalLight(0xfff4e0, 1.8)
   sun.position.set(-0.5, 1, 0.35)
   scene.add(sun)
   const roots = new Map<string, any>()
@@ -102,7 +108,14 @@ async function loadModels() {
     progress.value = ++done / models.models.length
   }))
   draco.dispose()
-  three = { scene, roots, matrix: buildMatrix() }
+  const road: any[] = [], grass: any[] = []
+  scene.traverse((o: any) => {
+    const k = o.isMesh && o.material?.userData?.kind
+    if (k === 'road') road.push(o.material)
+    if (k === 'grass') grass.push(o.material)
+  })
+  three = { scene, roots, matrix: buildMatrix(), hemi, sun, road, grass }
+  applyPalette()
 }
 
 function addLayers() {
@@ -197,9 +210,21 @@ function home() {
   map?.flyTo({ center: toLngLat(-10, -60), zoom: 16.2, pitch: 55, bearing: 34, duration: 1600 })
 }
 
+function applyPalette() {
+  if (!three) return
+  const g = GROUND[basemap.value]
+  three.road.forEach(m => m.color.set(g.road))
+  three.grass.forEach(m => m.color.set(g.grass))
+  three.hemi.groundColor.setHex(g.hemiGround)
+  three.hemi.intensity = g.hemi
+  three.sun.intensity = g.sun
+  map?.triggerRepaint()
+}
+
 function setBasemap(k: 'dark' | 'light') {
   if (!map || basemap.value === k) return
   basemap.value = k
+  applyPalette()
   map.setStyle(STYLES[k])
   map.once('style.load', () => { addLayers(); highlight(selected.value) })
 }
@@ -279,8 +304,8 @@ onBeforeUnmount(() => { markers.forEach(mk => mk.remove()); map?.remove(); map =
 
     <div class="tools">
       <button :title="t('tool.home')" :aria-label="t('tool.home')" @click="home"><Icon name="home" :size="18" /></button>
-      <button :class="{ on: basemap === 'dark' }" @click="setBasemap('dark')">{{ t('map.dark') }}</button>
       <button :class="{ on: basemap === 'light' }" @click="setBasemap('light')">{{ t('map.light') }}</button>
+      <button :class="{ on: basemap === 'dark' }" @click="setBasemap('dark')">{{ t('map.dark') }}</button>
     </div>
 
     <Transition name="fade">
@@ -319,11 +344,11 @@ onBeforeUnmount(() => { markers.forEach(mk => mk.remove()); map?.remove(); map =
 .list .code { min-width: 42px; text-align: center; padding: 3px 6px; border-radius: 6px; color: #fff; font-size: 11px; font-weight: 700; }
 .tools { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 30; display: flex; gap: 6px; padding: 6px; background: rgba(255,255,255,.95); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 6px 20px rgba(15,30,54,.18); }
 .tools button { white-space: nowrap; height: 34px; padding: 0 12px; border: 0; border-radius: 8px; background: none; color: var(--ink); font-weight: 600; font-size: 13px; cursor: pointer; display: grid; place-items: center; }
-.tools button.on { background: var(--ink); color: #fff; }
-.loading { position: absolute; inset: var(--hdr) 0 0 0; z-index: 50; display: grid; place-content: center; gap: 12px; text-align: center; background: rgba(15,30,54,.85); color: #fff; font-size: 14px; }
-.loading .bar { width: 220px; height: 4px; border-radius: 4px; background: rgba(255,255,255,.2); overflow: hidden; }
+.tools button.on { background: var(--accent); color: #fff; }
+.loading { position: absolute; inset: var(--hdr) 0 0 0; z-index: 50; display: grid; place-content: center; gap: 12px; text-align: center; background: var(--sky); color: var(--ink); font-size: 14px; }
+.loading .bar { width: 220px; height: 4px; border-radius: 4px; background: rgba(15,30,54,.12); overflow: hidden; }
 .loading .bar i { display: block; height: 100%; background: var(--accent); transition: width .2s; }
-.loading.err { color: #ffd2c2; }
+.loading.err { color: #c4500f; }
 :deep(.bd-label) {
   display: inline-flex; align-items: center; gap: 6px; padding: 4px 9px 4px 4px; border-radius: 999px; border: 0;
   background: rgba(255,255,255,.95); box-shadow: 0 2px 8px rgba(0,0,0,.25); font: 600 12px var(--font); color: var(--ink); cursor: pointer; white-space: nowrap;
