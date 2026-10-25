@@ -4,6 +4,8 @@ const { t, lang, setLang } = useLang()
 const base = useRuntimeConfig().app.baseURL
 // Link repo do workflow đặt lúc build (NUXT_PUBLIC_REPO_URL); để trống thì ẩn nút.
 const REPO_URL = useRuntimeConfig().public.repoUrl as string
+const route = useRoute()
+const isMap = computed(() => route.path.replace(/\/$/, '').endsWith('/ban-do'))
 </script>
 
 <template>
@@ -16,6 +18,10 @@ const REPO_URL = useRuntimeConfig().public.repoUrl as string
       </div>
     </div>
     <div class="right">
+      <nav class="mode" :aria-label="t('mode.map')">
+        <NuxtLink to="/" :class="{ on: !isMap }">{{ t('mode.3d') }}</NuxtLink>
+        <NuxtLink to="/ban-do" :class="{ on: isMap }">{{ t('mode.map') }}</NuxtLink>
+      </nav>
       <span class="place"><i class="dot" />{{ t('app.place') }}</span>
       <button class="lang" :aria-label="lang === 'vi' ? 'Switch to English' : 'Chuyển sang tiếng Việt'" @click="setLang(lang === 'vi' ? 'en' : 'vi')">
         <Icon name="globe" :size="16" /> {{ lang === 'vi' ? 'EN' : 'VI' }}
@@ -45,6 +51,9 @@ const REPO_URL = useRuntimeConfig().public.repoUrl as string
   border: 1px solid transparent; background: none; color: var(--ink); font: 600 13px var(--font); cursor: pointer; text-decoration: none;
 }
 .lang:hover, .icon:hover, .gh:hover { background: var(--soft); }
+.mode { display: inline-flex; padding: 3px; border: 1px solid var(--line); border-radius: 10px; gap: 2px; }
+.mode a { white-space: nowrap; height: 28px; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 7px; color: var(--ink); font: 600 13px var(--font); text-decoration: none; }
+.mode a.on { background: var(--ink); color: #fff; }
 .lang { border-color: var(--line); }
 @media (max-width: 760px) {
   .hdr { padding: 0 12px; }
@@ -53,5 +62,9 @@ const REPO_URL = useRuntimeConfig().public.repoUrl as string
   .ttl { font-size: 16px; }
   .sub { font-size: 8.5px; letter-spacing: .08em; max-width: 46vw; }
   .txt { padding-left: 10px; }
+  .mode a { padding: 0 9px; font-size: 12.5px; }
+}
+@media (max-width: 480px) {
+  .txt { display: none; }
 }
 </style>
